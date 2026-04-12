@@ -1,0 +1,284 @@
+/* ============================================================
+   style.css — All styles for the NEXT landing page
+   ============================================================ */
+
+/* --- Reset: removes default browser spacing --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- Page base --- */
+body {
+  background-color: #010101;
+  color: #2e7c40;
+  font-family: 'Press Start 2P', Tahoma, Geneva, Verdana, sans-serif;
+  
+
+/* ---- NAVIGATION BAR ---- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 4rem;
+  border-bottom: 1px solid #4f8582;
+  transition: background 0.3s;
+  font-family: Bitcount Grid Double, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-decoration: none;
+  color: #12127b;
+}
+
+/* Diamond icon using CSS clip-path */
+/* Remove the old logo-icon rules and replace with this */
+.logo-icon {
+  font-size: 1.6rem;          /* controls icon size */
+  background: linear-gradient(135deg, #114589, #1de1da);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* makes gradient show through the icon */
+  
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  color: #aaaaaa;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.btn-signup {
+  background-color: #e11d48;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-signup:hover {
+  background-color: #be123c;
+}
+
+/* ---- HERO SECTION ---- */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 4rem;
+  min-height: 560px;
+  overflow: hidden;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.text-orange { color: #f97316; }
+.text-red    { color: #149728; }
+.text-blue   { color: #f881d6; }
+
+.hero-text p {
+  color: #aaaaaa;
+  font-size: 1rem;
+  margin: 1.2rem 0 2rem;
+}
+
+.btn-start {
+  background-color: #e11d48;
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem 2.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-start:hover {
+  transform: translateY(-3px);
+  background-color: #be123c;
+}
+
+/* ---- HERO VISUAL (phone + card mockup) ---- */
+.hero-visual {
+  position: relative;
+  width: 420px;
+  height: 360px;
+  flex-shrink: 0;
+}
+
+.phone-frame {
+  position: absolute;
+  right: 80px;
+  top: 20px;
+  width: 165px;
+  height: 290px;
+  background: #302b2b;
+  border: 2px solid #333;
+  border-radius: 22px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.phone-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e11d48;
+}
+
+.phone-line {
+  height: 9px;
+  border-radius: 5px;
+  background: #2e2e2e;
+}
+
+.phone-line.short {
+  width: 55%;
+}
+
+.phone-list-item {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #2a2a2a;
+}
+
+/* Floating white card */
+.card-popup {
+  position: absolute;
+  right: 0;
+  top: 55px;
+  width: 230px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px;
+  color: #1a1a1a;
+  animation: floatCard 3.5s ease-in-out infinite;
+}
+
+/* Float up/down animation */
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+.card-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.card-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #e11d48;
+  flex-shrink: 0;
+}
+
+.card-bar {
+  height: 9px;
+  border-radius: 5px;
+  background: #e11d48;
+  width: 70%;
+}
+
+.card-bar.gray  { background: #e0e0e0; width: 90%; }
+.card-bar.gray2 { background: #eeeeee; width: 60%; margin-top: 7px; }
+
+/* ---- FEATURES SECTION ---- */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 4rem 5rem;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background: #141414;
+  border: 1px solid #222;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 260px;
+  transition: transform 0.25s, border-color 0.25s;
+  cursor: default;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  border-color: #e11d48;
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  font-size: 0.88rem;
+  color: #888;
+  line-height: 1.6;
+}
+
+/* ---- FOOTER ---- */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid #1e1e1e;
+  color: #555;
+  font-size: 0.85rem;
+}
+
+/* ---- RESPONSIVE (mobile screens) ---- */
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero { flex-direction: column; padding: 2.5rem 1.5rem; text-align: center; }
+  .hero-text h1 { font-size: 2.5rem; }
+  .hero-visual { display: none; }
+  .features { padding: 2rem 1.5rem; }
+}
