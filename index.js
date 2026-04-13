@@ -11,21 +11,6 @@ function scrollToFeatures() {
   section.scrollIntoView({ behavior: 'smooth' });
 }
 
-
-// ---- 2. NAVBAR background changes on scroll ----
-// Listens for the user scrolling — darkens the navbar for readability
-
-window.addEventListener('scroll', function () {
-  const nav = document.querySelector('nav');
-
-  if (window.scrollY > 50) {
-    nav.style.background = '#111111';   // solid dark when scrolled down
-  } else {
-    nav.style.background = 'transparent'; // transparent at the top
-  }
-});
-
-
 // ---- 3. SCROLL-IN ANIMATION for feature cards ----
 // Uses IntersectionObserver — a modern browser API that watches when
 // elements enter the visible screen area (the "viewport").

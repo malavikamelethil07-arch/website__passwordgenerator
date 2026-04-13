@@ -195,3 +195,29 @@ function resetAll() {
   text.textContent = '—';
   text.style.color = '';
 }
+function copyPassword() {
+  const pw = document.getElementById('password-display').textContent;
+
+  // Show inline error instead of alert
+  if (pw === 'Click Generate...') {
+    showError('Generate a password first!');
+    return;
+  }
+
+  navigator.clipboard.writeText(pw).then(function () {
+    showToast();
+  }).catch(function () {
+    showError('Could not copy. Please copy manually.');
+  });
+}
+
+// New function — shows red error text on the page
+function showError(message) {
+  const error = document.getElementById('error-msg');
+  error.textContent = message;
+
+  // Clear the message after 2 seconds
+  setTimeout(function () {
+    error.textContent = '';
+  }, 2000);
+}

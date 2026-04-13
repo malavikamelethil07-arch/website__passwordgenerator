@@ -70,21 +70,6 @@ nav {
   color: #ffffff;
 }
 
-.btn-signup {
-  background-color: #e11d48;
-  color: #ffffff;
-  border: none;
-  padding: 0.5rem 1.5rem;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.btn-signup:hover {
-  background-color: #be123c;
-}
-
 /* ---- HERO SECTION ---- */
 .hero {
   display: flex;
@@ -281,4 +266,10 @@ footer {
   .hero-text h1 { font-size: 2.5rem; }
   .hero-visual { display: none; }
   .features { padding: 2rem 1.5rem; }
+}
+.error-msg {
+  color: #ef4444;
+  font-size: 0.85rem;
+  text-align: center;
+  min-height: 20px;
 }
